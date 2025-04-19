@@ -1,35 +1,42 @@
 #include <iostream>
 using namespace std;
+
+template <class T>
+
 class Arithmetic {
 private:
-    int a, b;
+    T a, b;
 public:
-    Arithmetic(int x, int y);
-    int add();
-    int subtract();
-    int multiply();
+    Arithmetic(T x, T y);
+    T add();
+    T subtract();
+    T multiply();
 };
-Arithmetic::Arithmetic(int x, int y) 
+template <class T>
+Arithmetic<T>::Arithmetic(T x, T y) 
 {
     a = x;
     b = y;
     cout << "Constructor called" << endl;
 }
-int Arithmetic::add() 
+template <class T>
+T Arithmetic<T>::add() 
 { 
     return a + b; 
 }
-int Arithmetic::subtract() 
+template <class T>
+T Arithmetic<T>::subtract() 
 { 
     return a - b; 
 }
-int Arithmetic::multiply() 
+template <class T>
+T Arithmetic<T>::multiply() 
 { 
     return a * b; 
 }
     
 int main() {
-    Arithmetic arith(10, 5), arith2(20, 10);
+    Arithmetic arith(10.57,5.5);
     cout << "Add "<< arith.add() << endl;
     cout << "Subtract " << arith.subtract() << endl;
     return 0;
